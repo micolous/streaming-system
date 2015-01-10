@@ -1,7 +1,8 @@
 #! /bin/bash
 
 if [ `whoami` != "irc" ]; then
-  exec sudo su irc -c "/home/irc/logs/updatelogs.sh"
+  exec sudo -u irc "/home/irc/logs/updatelogs.sh"
+  exit
 fi
 
 i="0"
